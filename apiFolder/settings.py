@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-up_$-gtubv==d^bszzwlpbam39yr8iuyh7ma8wmqaoed5t4)jq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.3.15.206.122']
 #['firsttim.azurewebsites.net/','127.0.0.1']
 
 
