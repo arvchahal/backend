@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-up_$-gtubv==d^bszzwlpbam39yr8iuyh7ma8wmqaoed5t4)jq
 DEBUG = True
 
 # Include all the hosts you are serving your app from
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1', '3.15.206.122', 'libofAlexandria.com']
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
