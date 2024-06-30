@@ -1,5 +1,4 @@
-from django.http import JsonResponse,  HttpResponse
-
+from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import firebase_admin
 from firebase_admin import auth, db
@@ -52,7 +51,6 @@ def get_user_books_and_recommendations(request, uid):
         except Exception as e:
             logger.error(f'Recommendation system failure: {str(e)}')
             return JsonResponse({'error': 'Failed to generate recommendations', 'details': str(e)}, status=500)
-
     else:
         return JsonResponse({'error': 'Method not allowed'}, status=405)
 
