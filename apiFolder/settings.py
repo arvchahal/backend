@@ -80,13 +80,15 @@ DATABASES = {
 }
 
 # CORS settings
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://localhost:3001',
-    'http://libofAlexandria.com',
-    'http://3.15.206.122:8000',  # Add your backend's IP address
-    'http://3.15.206.122'  # Add without port if applicable
-]
+CORS_ALLOW_ALL_ORIGINS = True
+
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:3000',
+#     'http://localhost:3001',
+#     'http://libofAlexandria.com',
+#     'http://3.15.206.122:8000',  # Add your backend's IP address
+#     'http://3.15.206.122'  # Add without port if applicable
+# ]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
