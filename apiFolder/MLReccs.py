@@ -18,12 +18,16 @@ lemmatizer = WordNetLemmatizer()
 stop_word = set(stopwords.words('english'))
 
 import os
+
 def load_data(filepath):
     data = []
     with open(filepath, 'r') as f:
         reader = csv.reader(f, dialect='excel-tab')
-        for row in reader:
-            data.append(row)
+        for row in reader, start=1:
+            try:
+                data.append(row)
+            except Exception as e:
+                print(f"Error reading row {start}: {e}")
     return data
 
 def create_dataframe(data):
@@ -42,7 +46,14 @@ def preprocess_text(text):
     text = text.lower()
     text = re.sub(r'[^a-zA-Z]', " ", text)
     tokenized = nltk.word_tokenize(text)
-    tokens = [lemmatizer.lemmatize(word) for word in tokenized if word not in stop_word]
+    tokens = []
+    for word in tokenized:
+        try:
+            lemmatized_word = lemmatizer.lemmatize(word)
+            if lemmatized_word not in stop_word:
+                tokens.append(lemmatized_word)
+        except Exception as e:
+            print(f"Error lemmatizing word '{word}': {e}")
     return " ".join(tokens)
 
 def preprocess_dataframe(df, column_names):
