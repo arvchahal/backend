@@ -23,11 +23,11 @@ def load_data(filepath):
     data = []
     with open(filepath, 'r') as f:
         reader = csv.reader(f, dialect='excel-tab')
-        for row in reader, start=1:
+        for row in reader:
             try:
                 data.append(row)
             except Exception as e:
-                print(f"Error reading row {start}: {e}")
+                print(f"Error reading row: {e}")
     return data
 
 def create_dataframe(data):
